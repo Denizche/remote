@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DZ2.AppGateWay" Collapsed="true">
+    <Position X="2.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>TDGs\AppTGW.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DZ2.CandGateWay" Collapsed="true">
+    <Position X="6.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>TDGs\CandidateTDG.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DZ2.CritGateWay" Collapsed="true">
+    <Position X="1.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAI=</HashCode>
+      <FileName>TDGs\CritTGW.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DZ2.JobGateWay" Collapsed="true">
+    <Position X="5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>TDGs\JobTDG.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DZ2.ApplicationService" Collapsed="true">
+    <Position X="3.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABBIAEAAAAAAAigAFAAAAAAAQgAgAAAAAAAAA=</HashCode>
+      <FileName>Services\ApplicationService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CritGateWay" />
+      <Property Name="AppGateWay" />
+      <Property Name="JobGateWay" />
+      <Property Name="CandGateWay" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

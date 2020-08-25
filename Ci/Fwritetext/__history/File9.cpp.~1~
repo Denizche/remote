@@ -1,0 +1,51 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+#include <windows.h>
+#include <iostream.h>
+#include <fstream.h>
+#include <stdlib.h>
+//---------------------------------------------------------------------------
+
+
+#pragma argsused
+
+void copy_to(ifstream& in, ofstream& out);
+
+int main()
+{
+
+char character;
+
+ifstream in_stream;
+ofstream out_stream;
+
+in_stream.open("Lecture_4.txt") ;
+out_stream.open("copy.txt");
+
+copy_to( in_stream, out_stream);
+out_stream.close();
+in_stream.close();
+
+system("pause");
+
+return 0;
+}
+
+void copy_to(ifstream& in, ofstream& out)
+{
+	char character;
+
+
+	in.get(character);
+	while (!in.eof())
+	{
+		cout << character;
+		out.put(character);
+		in.get(character);
+	}
+		
+}
+
+//---------------------------------------------------------------------------

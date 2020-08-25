@@ -1,0 +1,48 @@
+C:\Users\Дмитрий\source\repos\DZ2\DZ2\bin\Debug\Database1.mdf
+C:\Users\Дмитрий\source\repos\DZ2\DZ2\bin\Debug\Database1_log.ldf
+C:\Users\Дмитрий\source\repos\DZ2\DZ2\bin\Debug\DZ2.exe.config
+C:\Users\Дмитрий\source\repos\DZ2\DZ2\bin\Debug\DZ2.exe
+C:\Users\Дмитрий\source\repos\DZ2\DZ2\bin\Debug\DZ2.pdb
+C:\Users\Дмитрий\source\repos\DZ2\DZ2\obj\Debug\DZ2.csprojResolveAssemblyReference.cache
+C:\Users\Дмитрий\source\repos\DZ2\DZ2\obj\Debug\DZ2.Form1.resources
+C:\Users\Дмитрий\source\repos\DZ2\DZ2\obj\Debug\DZ2.Properties.Resources.resources
+C:\Users\Дмитрий\source\repos\DZ2\DZ2\obj\Debug\DZ2.csproj.GenerateResource.cache
+C:\Users\Дмитрий\source\repos\DZ2\DZ2\obj\Debug\DZ2.csproj.CoreCompileInputs.cache
+C:\Users\Дмитрий\source\repos\DZ2\DZ2\obj\Debug\DZ2.exe
+C:\Users\Дмитрий\source\repos\DZ2\DZ2\obj\Debug\DZ2.pdb
+C:\Users\Дмитрий\source\repos\DZ2 v1.1\DZ2\bin\Debug\Database1.mdf
+C:\Users\Дмитрий\source\repos\DZ2 v1.1\DZ2\bin\Debug\Database1_log.ldf
+C:\Users\Дмитрий\source\repos\DZ2 v1.1\DZ2\bin\Debug\DZ2.exe.config
+C:\Users\Дмитрий\source\repos\DZ2 v1.1\DZ2\bin\Debug\DZ2.exe
+C:\Users\Дмитрий\source\repos\DZ2 v1.1\DZ2\bin\Debug\DZ2.pdb
+C:\Users\Дмитрий\source\repos\DZ2 v1.1\DZ2\obj\Debug\DZ2.csprojResolveAssemblyReference.cache
+C:\Users\Дмитрий\source\repos\DZ2 v1.1\DZ2\obj\Debug\DZ2.Form_Student.resources
+C:\Users\Дмитрий\source\repos\DZ2 v1.1\DZ2\obj\Debug\DZ2.Properties.Resources.resources
+C:\Users\Дмитрий\source\repos\DZ2 v1.1\DZ2\obj\Debug\DZ2.csproj.GenerateResource.cache
+C:\Users\Дмитрий\source\repos\DZ2 v1.1\DZ2\obj\Debug\DZ2.csproj.CoreCompileInputs.cache
+C:\Users\Дмитрий\source\repos\DZ2 v1.1\DZ2\obj\Debug\DZ2.exe
+C:\Users\Дмитрий\source\repos\DZ2 v1.1\DZ2\obj\Debug\DZ2.pdb
+C:\Users\Дмитрий\source\repos\DZ2 v1.3\DZ2\bin\Debug\Database1.mdf
+C:\Users\Дмитрий\source\repos\DZ2 v1.3\DZ2\bin\Debug\Database1_log.ldf
+C:\Users\Дмитрий\source\repos\DZ2 v1.3\DZ2\bin\Debug\DZ2.exe.config
+C:\Users\Дмитрий\source\repos\DZ2 v1.3\DZ2\bin\Debug\DZ2.exe
+C:\Users\Дмитрий\source\repos\DZ2 v1.3\DZ2\bin\Debug\DZ2.pdb
+C:\Users\Дмитрий\source\repos\DZ2 v1.3\DZ2\obj\Debug\DZ2.csprojResolveAssemblyReference.cache
+C:\Users\Дмитрий\source\repos\DZ2 v1.3\DZ2\obj\Debug\DZ2.Form_Student.resources
+C:\Users\Дмитрий\source\repos\DZ2 v1.3\DZ2\obj\Debug\DZ2.Properties.Resources.resources
+C:\Users\Дмитрий\source\repos\DZ2 v1.3\DZ2\obj\Debug\DZ2.csproj.GenerateResource.cache
+C:\Users\Дмитрий\source\repos\DZ2 v1.3\DZ2\obj\Debug\DZ2.csproj.CoreCompileInputs.cache
+C:\Users\Дмитрий\source\repos\DZ2 v1.3\DZ2\obj\Debug\DZ2.exe
+C:\Users\Дмитрий\source\repos\DZ2 v1.3\DZ2\obj\Debug\DZ2.pdb
+D:\Projects\С#\DZ2 v1.3\DZ2\bin\Debug\Database1.mdf
+D:\Projects\С#\DZ2 v1.3\DZ2\bin\Debug\Database1_log.ldf
+D:\Projects\С#\DZ2 v1.3\DZ2\bin\Debug\DZ2.exe.config
+D:\Projects\С#\DZ2 v1.3\DZ2\bin\Debug\DZ2.exe
+D:\Projects\С#\DZ2 v1.3\DZ2\bin\Debug\DZ2.pdb
+D:\Projects\С#\DZ2 v1.3\DZ2\obj\Debug\DZ2.csprojAssemblyReference.cache
+D:\Projects\С#\DZ2 v1.3\DZ2\obj\Debug\DZ2.Form_Candidate.resources
+D:\Projects\С#\DZ2 v1.3\DZ2\obj\Debug\DZ2.Properties.Resources.resources
+D:\Projects\С#\DZ2 v1.3\DZ2\obj\Debug\DZ2.csproj.GenerateResource.cache
+D:\Projects\С#\DZ2 v1.3\DZ2\obj\Debug\DZ2.csproj.CoreCompileInputs.cache
+D:\Projects\С#\DZ2 v1.3\DZ2\obj\Debug\DZ2.exe
+D:\Projects\С#\DZ2 v1.3\DZ2\obj\Debug\DZ2.pdb

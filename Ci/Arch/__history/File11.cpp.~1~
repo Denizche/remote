@@ -1,0 +1,175 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+#include <windows.h>
+#include <iostream.h>
+#include <fstream.h>
+#include <stdlib.h>
+//---------------------------------------------------------------------------
+
+
+#pragma argsused
+
+int main()
+{
+
+	char a[256];
+	int st[256];
+	char a2[256];
+	int stn[256];
+	int number=0,i=0;
+	int i2;
+	char ch, character=0;
+	int j = 0,k = 0,l[256],n;
+	int nenol=0;
+
+	for (i = 0; i <= 255; i++) {       // Запись всех символов в массив
+	character = number;
+	cout << character;
+	number++;
+	a[i]= character;
+	}
+	cout << "\n";
+	for ( i = 0; i <= 255; i++) {     // Проверка массива "алфавита"
+	cout << a[i];
+	}
+	cout << "\n";
+	for ( i = 0; i <= 255; i++) {    // Обнуление массива статистики
+	st[i]=0;
+	}
+	for ( i = 0; i <= 255; i++) {     // Проверка массива статистики
+	cout << st[i];
+	}
+	cout << "\n";
+
+	//Создание потоков ввода/вывода
+
+	ifstream in_stream;
+	ofstream out_stream;
+	in_stream.open("input.txt");
+	out_stream.open("text.arch") ;
+
+	while (! in_stream.eof()){
+	in_stream.get(ch);
+	for (i = 0; i <= 255; i++) {
+	  if (ch == a[i]) {
+		 st[i]++;
+		 break;
+	  }
+	}
+	}
+	cout << "\n";
+	for ( i = 0; i <= 255; i++) {     // Проверка массива статистики
+	cout << st[i];
+	cout << " ";
+	}
+	for ( i = 0; i <= 255; i++) {     // Copy массива статистики
+	stn[i]=st[i];
+	}
+	for ( i = 0; i <= 255; i++) {     // Проверка массива статистики
+	cout << stn[i];
+	cout << " ";
+	}
+	for ( i = 0; i <= 255; i++) {     // copy alphabet
+	a2[i]=a[i];
+	}
+
+	int min=9999,max=0; //   Сортировка  массива
+
+
+	for (i = 0; i <= 255; i++) {
+	 if (st[i] >= max) {
+	 max = st[i];
+	 }
+	 if ((st[i]<= min)&&(st[i]>0)) {
+	 min = st[i];
+
+	 }
+	}
+
+	cout << "\nMax ";
+	cout << max;
+	cout << "\nMin ";
+	cout << min;
+	cout << "\n";
+
+
+	for ( i = 0; i <= 255; i++) {    // Обнуление массива статистики
+	l[i]=0;
+	}
+
+
+	for (i = 0; i <= 255; i++)
+	{
+		for (j = i+1; j <= 255; j++)
+		{
+			if (i>=i2) {
+			  l[i2]=j;	
+			}
+		   if (stn[i] < stn[j])
+		   {
+			  k=stn[i];
+			  cout << "i " << i << "   j " << j <<  "   k " << k << "\n";
+			  stn[i]=stn[j];
+			  stn[j]=k;
+			  i2=i;
+		   }
+		}
+	}
+
+	n=0;
+
+	for (i = 0; i <= 255; i++) {
+	 if (stn[i]==0) {
+			  nenol++;
+	 }
+	}
+	character = '-';
+	cout << "\n";  cout << "\n";
+	for (i = 0; i <= nenol; i++) {
+	   for (j = 0; j <= 255; j++) {
+		 if ((stn[i]==st[j])&&(stn[i]!=0)) {
+			if (character==a2[i]) {       //попытка убрать символы которые уже были
+			   j++;
+			}
+			a2[i]=a[j];
+			cout << "i " << i << "   j " << j <<  "   k " << k << "\n";
+			stn[i]=0;
+			character = a2[i];
+			break;
+		}
+	   }
+	}
+
+	for (i = nenol+1; i <= 255; i++) {
+	 if (stn[i]==0) {
+			  nenol++;
+	 }
+	 }
+
+
+	cout << "\n";
+	cout << "\n";
+	for ( i = 0; i <= 255; i++) {     // Проверка массива статистики
+	cout << stn[i];
+	cout << " ";
+	}
+
+	cout << "\n";  cout << "\n";
+	for ( i = 0; i <= 255; i++) {     // Проверка массива alf
+	cout << a2[i];
+	cout << " ";
+	}
+
+
+
+
+
+	cout << "\n";
+	system("pause");
+
+	return 0;
+}
+
+//---------------------------------------------------------------------------

@@ -1,0 +1,6 @@
+    <div class="col-md-4">
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        <p>{{ product.price }} руб.</p>
+        <p><a class="btn btn-default" href="{% url 'product_url' product.id %}" role="button">Посмотреть описание &raquo;</a></p>
+    </div>

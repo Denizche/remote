@@ -1,0 +1,38 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+//---------------------------------------------------------------------------
+
+#pragma argsused
+#include <iostream.h>
+#include <windows.h>
+
+char* rus_str( char* str )
+		{
+			CharToOem( str, str );
+			return str;
+		}
+
+int main(int argc, char* argv[])
+{
+
+	int number;
+
+	char character;
+
+	cout << rus_str("Введите символ и нажмите ENTER.\n");
+	cin >> character;
+
+	number = character;
+
+	cout << rus_str("Вы ввели '") << character;
+	cout << rus_str("'.\n");
+	cout << rus_str("В памяти ПК это число ");
+	cout << number;
+	cout << rus_str("\n");
+	system("pause");
+	return 0;
+}
+//---------------------------------------------------------------------------

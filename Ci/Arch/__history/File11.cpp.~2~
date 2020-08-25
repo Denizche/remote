@@ -1,0 +1,83 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#include <iostream.h>
+#include <fstream.h>
+#pragma hdrstop
+
+//---------------------------------------------------------------------------
+
+#pragma argsused
+int main()
+{
+	int i,j;                                      // Ввод данных для счётчикоы
+	char a[256], character , ch;                        // Массив символов , символ (x2)
+	int st[256],number;                                  // Массив чисел , номер символа
+	for (i = 0; i < 256; i++)
+		{
+			st[i]=0;
+		}
+	for (i = 0; i <= 255; i++) {       // Запись всех символов в массив
+	character = number;
+	cout << character;
+	number++;
+	a[i]= character;
+	}
+	cout << "\n";
+	for ( i = 0; i <= 255; i++) {     // Проверка массива "алфавита"
+	cout << a[i];
+	}
+	cout << "\n";
+	for ( i = 0; i <= 255; i++) {    // Обнуление массива статистики
+	st[i]=0;
+	}
+	for ( i = 0; i <= 255; i++) {     // Проверка массива статистики
+	cout << st[i];
+	}
+	cout << "\n";
+
+	//Создание потоков ввода/вывода
+
+	ifstream in_stream;
+	ofstream out_stream;
+	in_stream.open("input.txt");
+	out_stream.open("text.arch") ;
+
+	while (! in_stream.eof()){
+	in_stream.get(ch);
+	for (i = 0; i <= 255; i++) {
+	  if (ch == a[i]) {
+		 st[i]++;
+		 break;
+	  }
+	}
+	}
+	for (i = 0; i < 256; i++)
+		{
+			for (j = 0; j < 256; j++)
+				{
+					if (st[i]>st[j])              // Сортировка в порядке убывания
+						{
+							int k = st[i];
+							char l=a[i];
+							a[i]= a[j];
+							st[i]=st[j];
+							a[j]=l;
+							st[j]=k;
+
+						}
+				}
+		}
+	for (i = 0; i < 256; i++)                     // Отсечение не встречающихся символов
+		{
+			if (st[i]!=0)
+				{
+					cout << a[i] << " : " << st[i] << endl;
+				}
+		}
+
+	cin.get();
+	return 0;
+}
+
+//---------------------------------------------------------------------------

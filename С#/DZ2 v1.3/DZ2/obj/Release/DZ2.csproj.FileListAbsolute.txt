@@ -1,0 +1,12 @@
+D:\Projects\С#\DZ2 v1.3\DZ2\bin\Release\Database1.mdf
+D:\Projects\С#\DZ2 v1.3\DZ2\bin\Release\Database1_log.ldf
+D:\Projects\С#\DZ2 v1.3\DZ2\bin\Release\DZ2.exe.config
+D:\Projects\С#\DZ2 v1.3\DZ2\bin\Release\DZ2.exe
+D:\Projects\С#\DZ2 v1.3\DZ2\bin\Release\DZ2.pdb
+D:\Projects\С#\DZ2 v1.3\DZ2\obj\Release\DZ2.csprojAssemblyReference.cache
+D:\Projects\С#\DZ2 v1.3\DZ2\obj\Release\DZ2.Form_Candidate.resources
+D:\Projects\С#\DZ2 v1.3\DZ2\obj\Release\DZ2.Properties.Resources.resources
+D:\Projects\С#\DZ2 v1.3\DZ2\obj\Release\DZ2.csproj.GenerateResource.cache
+D:\Projects\С#\DZ2 v1.3\DZ2\obj\Release\DZ2.csproj.CoreCompileInputs.cache
+D:\Projects\С#\DZ2 v1.3\DZ2\obj\Release\DZ2.exe
+D:\Projects\С#\DZ2 v1.3\DZ2\obj\Release\DZ2.pdb

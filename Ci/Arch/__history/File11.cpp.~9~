@@ -1,0 +1,509 @@
+/*//---------------------------------------------------------------------------
+ Чечелев Денис Сергеевич.
+ МГТУ им. Н.Э.Баумана РТ5-11.
+ 1 курс, 1 модуль.
+ 2015
+ Архиватор.
+ Авторские права оставляю за Семеновым Дмитрием Валерьевичем,
+ а также за А.А. Богуславским и С.М. Соколовым
+*///---------------------------------------------------------------------------
+ //#include <locale.h>
+#include <vcl.h>
+#include <iostream.h>
+#include <fstream.h>
+#include <string.h>
+#include <string>
+#include <stdlib.h>
+#include <stdio.h>
+#include <sstream>
+#include <math.h>
+#include <bitset>
+
+//---------------------------------------------------------------------------
+#pragma hdrstop
+#pragma argsused
+
+int CodeToInt(char cd[8])
+{
+	string bin;
+	bin = cd;
+	return(bitset<32>(bin).to_ulong());
+
+}
+
+
+
+int main()
+{
+	int i=0,j=0;                                      // определение типа счётчиков
+	int nenol=0,slen=0;                             //кол-во символов встречающихся в тексте, длина строки string+1
+	char a[256], character , ch, string[9];// Массив алфавита , символ (x2), строка для записи количества символов в двоичной СС
+	int code[8],cod=0;
+	int textlen=0;
+	char codech[8];
+	char minstring[999];
+	char string2[1];
+	int st[256],number=0,max=0,min=9999;               // Численный массив статистики , номер символа, макс/мин st[i]
+	for (i = 0; i < 256; i++)
+		{
+			st[i]=0;
+		}
+	for (i = 0; i <= 255; i++) {       // Запись таблицы  ASCII
+		character = number;
+		number++;
+		a[i]= character;
+	}
+	for ( i = 0; i <= 255; i++) {     // Проверка массива "алфавита"
+		cout << a[i];
+	}
+	cout << "\n";
+	for ( i = 0; i <= 255; i++) {    // Обнуление массива статистики
+		st[i]=0;
+	}
+
+	for ( i = 0; i <= 255; i++) {     // Проверка массива статистики
+		cout << st[i];
+	}
+	cout << "\n";
+
+	ifstream in_stream;                    //Переименовывание потоков ввода/вывода
+	ofstream out_stream;
+	ofstream CodeFile;
+	ofstream CharsFile;
+	in_stream.open("input.txt");           //открытие файла ввода и создание выходного
+	out_stream.open("output.arh") ;
+	CodeFile.open("code.arh") ;
+	CharsFile.open("chars.arh") ;
+	char lastch;
+	cout << "\n";
+	while (! in_stream.eof()){             //Сбор статистики
+		in_stream.get(ch);
+		if (ch!='\0') {
+		cout << ch;
+		lastch=ch;
+		}
+		for (i = 0; i <= 255; i++) {
+		  if (ch == a[i]) {
+			 st[i]++;
+			 break;
+	  }
+	}
+	}
+
+
+	cout << "\nlast char '"<<lastch<<"'"<<endl;
+
+
+
+
+
+	for (i = 0; i < 256; i++)
+		{
+			for (j = 0; j < 256; j++)
+				{
+					if (st[i]>st[j])              // Сортировка в порядке убывания
+						{
+							int k = st[i];
+							char l=a[i];
+							a[i]= a[j];
+							st[i]=st[j];
+							a[j]=l;
+							st[j]=k;
+						}
+				}
+		}
+
+
+	for (i = 0; i <= 255; i++){                     // отсечение лишней единицы статистики
+		if (st[i]!=0){
+			if (a[i]==lastch) {
+				st[i]=st[i]-1;
+			}
+		nenol++;
+		}
+		else a[i]=NULL;                                 //Отсечение лишних символов
+	}
+	for (i = 0; i < 256; i++)
+		{
+			for (j = 0; j < 256; j++)
+				{
+					if (st[i]>st[j])              // Сортировка в порядке убывания
+						{
+							int k = st[i];
+							char l=a[i];
+							a[i]= a[j];
+							st[i]=st[j];
+							a[j]=l;
+							st[j]=k;
+						}
+				}
+		}
+	cout <<  "\n";
+	for (i = 0; i <= 255; i++){                     // Вывод отсортированного алфавит
+		if (a[i]==NULL) {}
+		else cout << a[i]<< " ";
+	}
+	cout <<  "\n";
+	for (i = 0; i <= 255; i++){                     //  Вывод отсортированной статистики
+		if (st[i]!=0){
+			cout << st[i]<< " ";
+		}
+	}
+	int len;
+	for (i = 0; i <= 255; i++) {
+	 if (st[i] >= max) {
+	 max = st[i];
+	 }
+	 if ((st[i]<= min)&&(st[i]>0)) {
+	 min = st[i];
+
+	 }
+	 }
+
+	itoa(nenol,string,2);
+	cout << " \nnum of chars in Bin " << string<< " \n";
+	len = strlen(string);
+	slen = len;
+
+
+	for (i = 0; i < nenol; i++) {
+	itoa(i,string2,2);
+	cout << a[i] << " coded " << string2 << endl;
+	len = strlen(string2);
+	cout << slen << " -needed length     " << len << " length now"<<endl;
+	CodeFile.put(a[i]);
+	if (len<slen) {
+	  for (j = len; j != slen; j++) {
+		 CodeFile.put('0');
+	  }
+	}
+	for (j = 0; j < len; j++) {
+	CodeFile.put(string2[j]);
+	}
+	CodeFile.put('\n');
+  //	CharsFile.put(a[i]);
+  //	CharsFile.put('\n');
+	st[i]=NULL;
+
+	}
+
+
+	for (i = 0; i <= 7; i++) {       // Запись таблицы  ASCII
+		code[i]=0;
+	}
+
+
+	cout << " \nSAVING, PRESS ENTER\n";
+	CodeFile.close() ;
+	ifstream InCodeFile;
+	InCodeFile.open("code.arh");
+	cin.get();
+	in_stream.seekg(0);	// дважды перевод указателя дабы
+	in_stream.seekg(0);  //Начать считывать входной файл с начала
+	InCodeFile.seekg(0); // тоже самое с
+	InCodeFile.seekg(0); // файлом алфавита
+
+	j=0;cod=0;
+	int k=0;
+	character=NULL;
+	cout << " \nInput file in chars, ints, and in binary numbers\n";
+	int l=0;
+	do {
+	in_stream.get(ch);
+		if (ch!='\0'){
+		for (i = 0; i < 256; i++) {
+
+		  if (a[i]==ch)
+		  {
+			number=ch;
+			if (number<0) {
+				number=256+number;
+			}
+			cout << ch << ".ch "<< number <<".int "<<itoa(number,string2,2);
+
+			//ПОИСК ЭТОГО СИМВОЛА В КОДОВОМ АЛФАВИТЕ
+
+
+			do {
+
+			InCodeFile.get(character);
+			cout << endl << ch << " ch   "<< character <<"- Character "<<endl;
+			 if (ch==character) {
+			 for (k=0; k < slen; k++) {
+			   InCodeFile.get(character);
+			   out_stream.put(character);
+			   l++;
+				if (l==8) {
+				 out_stream.put(' ');
+				 l=0;
+				}
+			 }
+			 break;
+			 }
+
+
+			}while (!InCodeFile.eof());
+				InCodeFile.seekg(0);
+				InCodeFile.seekg(0);
+			j++;
+			if (j==2||j==4||j>=6) {
+			   cout << endl <<"   Next ";
+			}
+			else cout <<"   Next ";
+			if (j>8) {
+				j=0;
+			}
+		  }
+		}
+		}
+		}while ( !in_stream.eof());
+   char codes[8];
+   out_stream.close();
+   ifstream CodeStr;
+   CodeStr.open("output.arh");
+   ch=NULL;
+   i=0;
+   cod=0;
+   do {
+   codech[i]=NULL;
+   CodeStr.get(ch);
+	if (ch=='1') {
+	codech[i]='1';
+	}
+	if (ch=='0') {
+	codech[i]='0';
+	}
+	if (ch==' ') {
+	i--;
+	}
+	if (i==7) {
+	cout <<" codech "<<codech<<endl;
+	int value = atoi(codech);
+	cout << "VALUE "<< value << endl << " charcode ";
+	cout << CodeToInt(codech) << endl;
+	cod = CodeToInt(codech);
+	character = cod;
+	cout << " character "<< character << endl;
+	CharsFile.put(character);
+	i=0;
+	}
+	i++;
+   }while ( !CodeStr.eof());
+
+
+
+
+	cin.get();
+
+
+	InCodeFile.close() ;
+	CharsFile.close() ;
+	in_stream.close();                     //Закрытие потоков
+
+	cout << " \nDONE\n";
+	system("pause");
+
+	return 0;
+}
+
+//---------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+Часы проведенные в CodeGear при попытках закодировать символы 26.09 - 9ч
+26.09 ___ 22:26 сижу за архиватором с утра, часов с 12ти... наконец реализовал
+кодировку символов... дай бог чтоб оно работало.
+
+27.09.2015 15:11 Я СЖААААААААААААААААААААААААААААААААААААААААААААААААААЛ
+разжать бы еще...
+								//БЕЗДНА
+								/*
+	int minnum=0,maxnum=0;
+	for (i = 0; i <= 255; i++) {
+	 if (st[i]==min) {
+	 minnum++;
+	 }
+	 }
+	cout <<"\nmax " << max <<" there are "<<minnum<<" chars with "<<min<<" st"<<endl;
+
+	cout << "\n"<< nenol << " chars w/ st!=0 \n";
+	int bits;
+	for (i = 1; i < 9; i++) {
+		   if ( (nenol>pow(2.0,i-1)) && (nenol<pow(2.0,i)) ) {
+			  bits=i;
+			  cout<<"It is needed "<< bits << " bits to code\n";
+			  break;
+		   }
+	}
+
+	itoa(nenol,string,2);
+	cout << string<< " \n";
+	slen = strlen(string)+1;
+	cout << slen << " - number of 1/0 in most rare char's code\n";                //МАКС КОЛ-ВО 1 и 0 при кодировке 1го символа
+	int maxc=slen;
+	itoa(minnum,minstring,2);
+	cout << minstring<< " - chars with min in binary \n";
+	slen = strlen(minstring);
+	cout << slen << " - number of 1/0 in most frequent char's code\n";                //min КОЛ-ВО 1 и 0 при кодировке 1го символа
+
+	int i3=0,i2=1,i4=0;
+	start://
+	i4=i3;
+	 maxnum=0;
+	 for (i = 0; i <= 255; i++) {
+	 if (st[i]==max-i3) {
+	 maxnum++;
+
+	 }
+
+	 }
+	i3=i4;
+
+
+	i4=0;
+	cout << "\nDEBUG SLEN'"<<slen<<"'"<<  " maxnum '"<<maxnum<<"'   !PRESS ENTER TO WIN!"<<    endl;
+	for (i = 0 + i3; i < maxnum; i++) {
+	cin.get();
+	if (i4==slen) {
+	 goto nextstep;
+	}
+	 cout << "\n'"<< a[i] << "' will be codes as ";
+
+		if (i==0+i3) {
+			for (j = 0; j < slen; j++) {
+			  code[7-j]='0';
+			}
+			for (j = 0; j != 8; j++) {
+			 cout << code[j];
+			 code[j]='-';
+		}
+		}
+		else
+		{
+			code[8-i]='1';                  //I IIIIIIIIIIIIII
+			i4++;
+			for (j = 0; j < slen; j++) {
+			 if (code[7-j]!='1') {
+						code[7-j]='0';
+			 }
+			}
+         for (j = 0; j != 8; j++) {
+			 cout << code[j];
+			 code[j]='-';
+
+		}
+		}
+	  i4++;
+	}
+	 nextstep:
+	 i3++;
+	 slen++;
+	 if (i3>=maxc) {
+	  goto end;
+	 }
+	 else goto start;
+
+	 end:
+
+
+
+
+								*/

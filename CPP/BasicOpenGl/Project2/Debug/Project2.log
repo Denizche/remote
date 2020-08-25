@@ -1,0 +1,2 @@
+﻿  main.cpp
+D:\Projects\CPP\BasicOpenGl\Project2\main.cpp(6): fatal error C1083: Не удается открыть файл включение: GL/GLAUX.H: No such file or directory,

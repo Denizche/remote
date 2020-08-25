@@ -1,0 +1,12 @@
+CACHE MANIFEST
+# 2017-09-02:v10
+CACHE:
+//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css
+//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css"
+//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
+//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js
+
+NETWORK:
+js\index.js
+index.html
+*
