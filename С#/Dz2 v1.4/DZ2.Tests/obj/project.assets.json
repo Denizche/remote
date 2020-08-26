@@ -5774,11 +5774,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\С#\\Dz2 v1.4\\DZ2.Tests\\DZ2.Tests.csproj",
+      "projectUniqueName": "D:\\Projects\\gitprojects\\С#\\Dz2 v1.4\\DZ2.Tests\\DZ2.Tests.csproj",
       "projectName": "DZ2.Tests",
-      "projectPath": "D:\\Projects\\С#\\Dz2 v1.4\\DZ2.Tests\\DZ2.Tests.csproj",
+      "projectPath": "D:\\Projects\\gitprojects\\С#\\Dz2 v1.4\\DZ2.Tests\\DZ2.Tests.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\С#\\Dz2 v1.4\\DZ2.Tests\\obj\\",
+      "outputPath": "D:\\Projects\\gitprojects\\С#\\Dz2 v1.4\\DZ2.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\ProgramData\\Xamarin\\NuGet\\",
@@ -5799,8 +5799,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "D:\\Projects\\С#\\Dz2 v1.4\\DZ2\\DZ2.csproj": {
-              "projectPath": "D:\\Projects\\С#\\Dz2 v1.4\\DZ2\\DZ2.csproj"
+            "D:\\Projects\\gitprojects\\С#\\Dz2 v1.4\\DZ2\\DZ2.csproj": {
+              "projectPath": "D:\\Projects\\gitprojects\\С#\\Dz2 v1.4\\DZ2\\DZ2.csproj"
             }
           }
         }
