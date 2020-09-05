@@ -23,3 +23,8 @@ def field(items, *args):
 def random_generator(begin, end, num_count):
     for i in range(num_count):
         yield random.randint(begin, end)
+
+        
+def gen_random(begin, end, num_count):
+    for i in range(num_count):
+        yield random.randint(begin, end)
